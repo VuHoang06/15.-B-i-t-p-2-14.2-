@@ -10,19 +10,19 @@ void nhap_dulieu(Hocsinh hs[], int n){
                 printf("nhap mhs: "); scanf("%d", &hs[i].mhs);
                 getchar();
                 printf("nhap ho ten: "); scanf("%[^\n]",hs[i].hoten);
-                getchar();      
+                getchar();
                 printf("nhap diem: "); scanf("%f",&hs[i].diem);
         }
 }
 void in_dulieu(Hocsinh hs[], int n){
-        printf("---------------------------------\n");
+        printf("------------------------------------------------\n");
         printf("|%-5s|%-8s|%-25s|%-5s|\n","STT","MaHS","Ho va Ten","Diem");
-        printf("---------------------------------\n");
+        printf("------------------------------------------------\n");
         for(int i=0; i<n; i++){
                 printf("|%-5d|%-8d|%-25s|%-5.2f|\n",i+1,hs[i].mhs,
                                 hs[i].hoten,hs[i].diem);
                                 }
-        printf("---------------------------------\n");
+        printf("------------------------------------------------\n");
                 }
         int main(){
         Hocsinh hs[10];
