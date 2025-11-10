@@ -1,0 +1,48 @@
+#include<stdio.h>
+typedef struct {
+int ngay;
+int thang;
+int nam;
+} NgayThangNam;
+void nhapNgay(NgayThangNam *d) {
+    printf("Nhập ngày: ");
+    scanf("%d", &d->ngay);
+    printf("Nhập tháng: ");
+    scanf("%d", &d->thang);
+    printf("Nhập năm: ");
+    scanf("%d", &d->nam);
+}
+int soSanhNgay(NgayThangNam d1, NgayThangNam d2) {
+    if (d1.nam < d2.nam) return -1;
+    if (d1.nam > d2.nam) return 1;
+
+    if (d1.thang < d2.thang) return -1;
+    if (d1.thang > d2.thang) return 1;
+
+    if (d1.ngay < d2.ngay) return -1;
+    if (d1.ngay > d2.ngay) return 1;
+
+    return 0;
+}
+int main() {
+    NgayThangNam ngay1, ngay2;
+    int ketQua;
+
+    printf("Nhập ngày thứ nhất\n");
+    nhapNgay(&ngay1);
+
+    printf("\nNhập ngày thứ hai\n");
+    nhapNgay(&ngay2);
+
+    ketQua = soSanhNgay(ngay1, ngay2);
+
+    printf("\nKết quả so sánh: ");
+    if (ketQua == -1)
+        printf("Ngày 1 trước ngày 2\n");
+    else if (ketQua == 0)
+        printf("Hai ngày trùng nhau\n");
+    else
+        printf("Ngày 1 sau ngày 2\n");
+
+    return 0;
+}
