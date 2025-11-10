@@ -1,0 +1,38 @@
+#include<stdio.h>
+typedef struct{
+        int mhs;
+        char hoten[31];
+        float diem;
+} Hocsinh;
+void nhap_dulieu(Hocsinh hs[], int n){
+        for(int i=0; i<n; i++){
+                printf("nhap thong tin hoc sinh thu %d:\n",i+1);
+                printf("nhap mhs: "); scanf("%d", &hs[i].mhs);
+                getchar();
+                printf("nhap ho ten: "); scanf("%[^\n]",hs[i].hoten);
+                getchar();      
+                printf("nhap diem: "); scanf("%f",&hs[i].diem);
+        }
+}
+void in_dulieu(Hocsinh hs[], int n){
+        printf("---------------------------------\n");
+        printf("|%-5s|%-8s|%-25s|%-5s|\n","STT","MaHS","Ho va Ten","Diem");
+        printf("---------------------------------\n");
+        for(int i=0; i<n; i++){
+                printf("|%-5d|%-8d|%-25s|%-5.2f|\n",i+1,hs[i].mhs,
+                                hs[i].hoten,hs[i].diem);
+                                }
+        printf("---------------------------------\n");
+                }
+        int main(){
+        Hocsinh hs[10];
+        int n;
+        do{
+        printf("nhap so hoc sinh: "); scanf("%d",&n);
+        if(n<=0||n>10){
+}
+} while(n<=0||n>10);
+        nhap_dulieu(hs,n);
+        in_dulieu(hs,n);
+return 0;
+}
